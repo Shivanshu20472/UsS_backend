@@ -7,6 +7,7 @@ const brycpt = require("bcryptjs");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 const CryptoJS = require("crypto-js");
+const PORT = process.env.PORT || 3000;
 
 const jwt = require("jsonwebtoken");
 var nodemailer = require("nodemailer");
@@ -182,7 +183,7 @@ app.post("/forgot-password", async (req, res) => {
   } catch (error) {}
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is up on port 3000");
 });
 
